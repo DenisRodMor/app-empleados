@@ -1,0 +1,21 @@
+<div class="container">
+
+    <div class="row">   <!--eSTO CORRESPONDE A LA LISTA-->
+      <div class="col">
+        <div>
+          
+                {{indice+1}}:{{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
+              <a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'1'}"> Actualizar</a>
+              &nbsp;&nbsp; <!--Esta etiqueta hace dos pequeños espacios en blanco-->
+              <a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'2'}"> Eliminar</a>
+        </div>
+
+        <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c>
+
+        <ul style="list-style: none;">
+          <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+        </ul>
+
+      </div>
+    </div>
+    </div>
